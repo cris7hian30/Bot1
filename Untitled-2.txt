@@ -1,0 +1,78 @@
+curl -X POST -H "Content-Type: application/json" -d '{
+    "get_started":
+ {"payload":"GET_STARTED_FG"}
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAEqdEYgOZC8BAOANGuj1ihx1VMu1jyCUXWTYpuUPpQIf8B6IEZApUCzZAYkGEfsJDZBMnFoHMDhDRyXheFH0q2WCKVnRmAvIf5q8tlbZChavuX8j248QUZCiRnn3SLzETq01oIAhWn0WOX7HzafmuEXk0W1s687rp15s3NwhCPAZDZD"
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+    "greeting":[
+  {
+    "locale":"default",
+    "text":"Hola {{user_firts_name}}!, Bienvenido a nuestra pagina"
+  }, {
+    "locale":"en_US",
+    "text":"Hi {{user_firts_name}}!"
+  }
+]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAEqdEYgOZC8BAOANGuj1ihx1VMu1jyCUXWTYpuUPpQIf8B6IEZApUCzZAYkGEfsJDZBMnFoHMDhDRyXheFH0q2WCKVnRmAvIf5q8tlbZChavuX8j248QUZCiRnn3SLzETq01oIAhWn0WOX7HzafmuEXk0W1s687rp15s3NwhCPAZDZD"
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+    "persistent_menu":[
+        {
+            "locale":"default",
+            "composer_input_disabled": false,
+            "call_to_actions":[
+                {
+                    "title":"Monkeys Bar Productos",
+                    "type":"nested",
+                    "call_to_actions":[
+                        {
+                            "title":"Cocteles",
+                            "type":"postback",
+                            "payload":"COCTELES_PAYLOAD"
+                        },
+                        {
+                            "title":"Cervezas",
+                            "type":"postback",
+                            "payload":"CERVEZAS_PAYLOAD"
+                        },
+                        {
+                            "title":"Botellas",
+                            "type":"postback",
+                            "payload":"BOTELLAS_PAYLOAD"
+                        },
+                        {
+                            "title":"Comida",
+                            "type":"postback",
+                            "payload":"COMIDA_PAYLOAD"
+                        }
+                    ]
+                },
+                {
+                    "title":"Contacto",
+                    "type":"nested",
+                    "call_to_actions":[
+                        {
+                            "title":"Reservas",
+                            "type":"postback",
+                            "payload":"RESERVAS_PAYLOAD"
+                        },
+                        {
+                            "type":"web_url",
+                            "title":"Pagina",
+                            "url":"https://www.facebook.com/me",
+                            "webview_height_ratio":"full"
+                        }
+                    ]
+                },
+                {
+                    "type":"web_url",
+                    "title":"Acerca...",
+                    "url":"https://www.youtube.com/",
+                    "webview_height_ratio":"full"
+                }
+            ]
+        }
+    ]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAEqdEYgOZC8BAOANGuj1ihx1VMu1jyCUXWTYpuUPpQIf8B6IEZApUCzZAYkGEfsJDZBMnFoHMDhDRyXheFH0q2WCKVnRmAvIf5q8tlbZChavuX8j248QUZCiRnn3SLzETq01oIAhWn0WOX7HzafmuEXk0W1s687rp15s3NwhCPAZDZD"
